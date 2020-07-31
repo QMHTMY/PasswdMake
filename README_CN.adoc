@@ -32,7 +32,7 @@ CAUTION: [link:README.adoc[English]] 输入各种账号的seed以生成密码，
 
 image::./passwdmake.png[password.png]
 
-TIP: 这么长和复杂的密码如何保存？使用pass工具，安装如下。用pass保存PasswdMake生成的密码，以后要用时，再用pass输出密码，用pass -c account 还可保存密码到剪切板以直接粘贴到登录框。
+这么长和复杂的密码如何保存？使用pass工具，安装如下。用pass保存PasswdMake生成的密码，以后要用时，再用pass输出密码，用pass -c account 还可保存密码到剪切板以直接粘贴到登录框。
 
 [source, shell]
 .bash

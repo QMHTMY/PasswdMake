@@ -3,7 +3,7 @@
 :author: 'Shieber'
 :date: '2020.07.31'
 
-CAUTION: [link:README_CN.adoc[中文]] Make a password for any account via a seed.
+### [link:README_CN.adoc[中文]] Make a password for any account via a seed.
 
 ### Usage1
 
