@@ -5,7 +5,7 @@
 
 CAUTION: [link:README_CN.adoc[中文]] Make a password for any account via a seed.
 
-NOTE: Usage1
+### Usage1
 
 [source, shell]
 .bash
@@ -17,7 +17,7 @@ NOTE: Usage1
     $ python PasswdMake.py weiboxjp
 ----
 
-NOTE: Usage2 [Add PasswdMake.py to /usr/local/bin]
+### Usage2 [Add PasswdMake.py to /usr/local/bin]
 
 [source, shell]
 .bash
@@ -28,7 +28,7 @@ NOTE: Usage2 [Add PasswdMake.py to /usr/local/bin]
     $ PasswdMake seed
 -----
 
-TIP: Example
+### Example
 
 image::./passwdmake.png[password.png]
 

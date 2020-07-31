@@ -5,7 +5,7 @@
 
 CAUTION: [link:README.adoc[English]] 输入各种账号的seed以生成密码，seed可以是账户种类加姓名或数字等。
 
-NOTE: 用法1
+### 用法1
 
 [source, shell]
 .bash
@@ -17,7 +17,7 @@ NOTE: 用法1
     $ python PasswdMake.py weiboxjp
 ----
 
-NOTE: 用法2 [添加 PasswdMake.py 到/usr/local/bin]
+### 用法2 [添加 PasswdMake.py 到/usr/local/bin]
 
 [source, shell]
 .bash
@@ -28,7 +28,7 @@ NOTE: 用法2 [添加 PasswdMake.py 到/usr/local/bin]
     $ PasswdMake seed  #命令行直接生成密码，省去用法1中冗长语法
 -----
 
-TIP: 用法1示例，左侧为输入的seed，右侧为密码，可见，密码非常丰富，极难重复
+### 用法1示例，左侧为输入的seed，右侧为密码，可见，密码非常丰富，极难重复
 
 image::./passwdmake.png[password.png]
 
@@ -42,4 +42,4 @@ TIP: 这么长和复杂的密码如何保存？使用pass工具，安装如下�
 
 image::./savepasswd.gif[savepasswd]
 
-NOTE: 我的密码都是这么管理的，我也不知道我的微信，知乎，京东的密码到底是多少，反正要用就用pass显示。
+### 我的密码都是这么管理的，我也不知道我的微信，知乎，京东的密码到底是多少，反正要用就用pass显示。
