@@ -3,7 +3,7 @@
 :author: 'Shieber'
 :date: '2020.07.31'
 
-CAUTION: [link:README.adoc[English]] 输入各种账号的seed以生成密码，seed可以是账户种类加姓名或数字等。
+### [link:README.adoc[English]] 输入各种账号的seed以生成密码，seed可以是账户种类加姓名或数字等。
 
 ### 用法1
 
@@ -42,4 +42,4 @@ image::./passwdmake.png[password.png]
 
 image::./savepasswd.gif[savepasswd]
 
-### 我的密码都是这么管理的，我也不知道我的微信，知乎，京东的密码到底是多少，反正要用就用pass显示。
+我的密码都是这么管理的，我也不知道我的微信，知乎，京东的密码到底是多少，反正要用就用pass显示。
