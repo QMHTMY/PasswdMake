@@ -30,8 +30,9 @@
 
 ### Example
 
-image::./passwdmake.png[password.png]
+image::./passwdmake.png[passwordmk.png]
 
+image::./passwdmakeshell.png[passwordmsh.png]
 
 ### Use pass to save the long-complex password as below
 

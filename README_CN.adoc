@@ -28,9 +28,11 @@
     $ PasswdMake seed  #命令行直接生成密码，省去用法1中冗长语法
 -----
 
-### 用法1示例，左侧为输入的seed，右侧为密码，可见，密码非常丰富，极难重复
+### 两种用法示例，左侧为输入的seed，右侧为密码，可见，密码非常丰富，极难重复
 
-image::./passwdmake.png[password.png]
+image::./passwdmake.png[passwordmk.png]
+
+image::./passwdmakeshell.png[passwordmsh.png]
 
 这么长和复杂的密码如何保存？使用pass工具，安装如下。用pass保存PasswdMake生成的密码，以后要用时，再用pass输出密码，用pass -c account 还可保存密码到剪切板以直接粘贴到登录框。
 
