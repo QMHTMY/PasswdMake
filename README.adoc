@@ -32,7 +32,7 @@
 
 image::./passwdmake.png[password.png]
 
-TIP: use pass to save the long and complex password as below
+Use pass to save the long-complex password as below
 
 [source, shell]
 .bash
