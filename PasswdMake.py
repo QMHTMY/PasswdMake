@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
-# Date: 2020-07-31
-# Author: Shieber
+#   Date: 2020-07-31
+#   Author: Shieber
+#   密码生成器
 
 import sys
 import base64
@@ -17,17 +18,17 @@ __all__ = ['HashMn', 'HashPassword']
 梅森素数:形如Mn=2^n-1的素数，此脚本用来产生哈希数。
 """
 
-##########函数的配置参数，可放入类，也可单独放到文件中，如yaml文件，此文档未做处理#############
+###函数的配置参数，可放入类，也可单独放到文件中，如yaml文件，此文档未做处理
 #密码及操作控制字典
-#minseedLen 种子最小长度 trunctLen  运算中舍去的子字符串长度
-#minpswdLen 密码最小长度 maxpswdLen 密码最大长度
+# minseedLen 种子最小长度 trunctLen  运算中舍去的子字符串长度
+# minpswdLen 密码最小长度 maxpswdLen 密码最大长度
 controlkey = {'minseedLen':4,'trunctLen':2,'minpswdLen':6,'maxpswdLen':20}
 
 #密码长度控制表，最短6位，最长20位，
-#此表主要用于设置哈希数的次方数k，因为不求高次幂，数太小，长度就不够。
+# 此表主要用于设置哈希数的次方数k，因为不求高次幂，数太小，长度就不够。
 # 6-10位长度时，求1次方
-#11-15位长度时，求2次方
-#16-20位长度时，求3次方
+# 11-15位长度时，求2次方
+# 16-20位长度时，求3次方
 lengthmap = {
         '6':1, '7':1, '8':1, '9':1, '10':1,
         '11':2,'12':2,'13':2,'14':2,'15':2,
@@ -35,11 +36,10 @@ lengthmap = {
        }
 
 #使用可见的ascii字符来做密码子，可自行改变顺序和增删字符
-#哈希函数计算高次幂后，每次截取2位字符转换为整数(00-99)，然后映射到secretstr不同位置的值作为密码子
-#secretstr中的ascill包括[0-9],[a-z],[A-Z],+-*/%\[]{}()^.?':;共91位
+# 哈希函数计算高次幂后，每次截取2位字符转换为整数(00-99)，然后映射到secretstr不同位置的值作为密码子
+# secretstr中的ascill包括[0-9],[a-z],[A-Z],+-*/%\[]{}()^.?':;共91位
 secretstr = "!pqr$*+STU%Vstuv:w'{WX&YZ-Q_/02.3(4<AlBCo|xy8jDE^FG?IH[\]JK>LM#N6OP);Ra@bce7d=9fg5hi,k1mnz}"
 
-##########函数#########
 def hashMn(item):
     """梅森哈希函数：将item中各字符ascii值求和，同时不同位置ascii值乘以不同权重(i+1)"""
     assert isinstance(item, str), f'item = {item} must be string'
