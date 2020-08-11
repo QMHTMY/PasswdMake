@@ -37,12 +37,10 @@ __all__ = ['HashMn', 'HashPassword']
 """
 
 ##函数的配置参数，可放入类，也可单独放到文件中，如yaml文件，此文档未做处理
-#1.密码及操作控制字典
-# trunctLen  运算中舍去的子字符串长度
+#密码及操作控制字典, trunctLen控制运算中舍去的子字符串长度
 controlkey = {'minseedLen':4,'trunctLen':2,'minpswdLen':6,'maxpswdLen':20}
 
-#2.根据长度设置哈希数的幂指，密码长度控制表，最短6位，最长20位，
-# 6-10位长度时，求1次方就够了
+#2.根据长度设置哈希数的幂指数，密码长度控制表，最短6位，最长20位，6-10位长度时，求1次方就够了
 lengthmap = {
         '6':1, '7':1, '8':1, '9':1, '10':1,
         '11':2,'12':2,'13':2,'14':2,'15':2,
@@ -67,7 +65,7 @@ def hashPassword(seed, bit=16):
     assert isinstance(bit, int), f'bit = {bit} must be an integer'
     assert controlkey['maxpswdLen'] >= bit >= controlkey['minpswdLen'], f'password length must in 6-20'
 
-    #获取hashvalue高次幂并转换位字符串hashstr
+    #获取hashvalue高次幂并转换为字符串hashstr
     hashvalue = hashMn(seed)
     k = lengthmap[str(bit)]
     hashstr = str(pow(hashvalue, k))
@@ -78,6 +76,7 @@ def hashPassword(seed, bit=16):
         pos = int(hashstr[:controlkey['trunctLen']])
         pos = pos % len(secretstr) if pos >= len(secretstr) else pos
         passwd += secretstr[pos]
+
         hashstr = hashstr[controlkey['trunctLen']:]
     
     #将seed扩充到passwd
