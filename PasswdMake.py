@@ -48,7 +48,7 @@ lengthmap = {
        }
 
 #3.映射到可见的ascii字符来做密码子，可自行改变顺序和增删字符
-secretstr = "!pqr$*+STU%Vstuv:w'{WX&YZ-Q_/02.3(4<AlBCo|xy8jDE^FG?IH[\]JK>LM#N6OP);Ra@bce7d=9fg5hi,k1mnz}"
+secretstr = "!pqr$*+!STU%VsvKtuv:w'{zW&X|YZ-Q_/2134<AlBcCom|x8j.DE^FG?IH[JK>LM#N6OP);Ra@bce7d=9fg5hi.0,kn1mzz@b}"
 
 def hashMn(item):
     assert isinstance(item, str), f'item = {item} must be string'
