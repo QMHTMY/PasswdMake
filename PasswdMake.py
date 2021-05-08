@@ -11,7 +11,7 @@ __version__ = 0.1
 __all__ = ['HashMn', 'HashPassword']
 
 """密码生成脚本
-   利用关键字符串(种子)和梅森哈希数去产生各种种子不同长度的密码。
+   利用关键字符串(种子)和梅森哈希数去产生不同长度的密码。
    种子:用户输入的某账户的关键字符串，比如对应腾讯的QQ，种子可以是[qq,qQ,Qq,QQ,txqq,..]中任何一个。
    种子建议大于四个字符，这样产生的密码才够健壮。
    梅森素数:形如Mn=2^n-1的素数，n为素数，此脚本用来产生哈希数。
@@ -20,13 +20,13 @@ __all__ = ['HashMn', 'HashPassword']
    梅森哈希函数：将各字符ascii值求和，不同位置ascii值乘不同权重(i+1)
 
    hashPassword()
-   由哈希数的k次方值产生密码, seed为种子，bit为密码长度[最小为6，默认为16]
+   由哈希数的k次方值产生密码映射数字, seed为种子，bit为密码长度[最小为6，默认为16]
 
    流程：
        a.由seed调用hashMn产生哈希数hashvalue
        b.依据bit的值，求哈希数的k次方，主要为了构造一个足够长的数
        c.将此足够长的数转换为字符串hashstr
-       d.每次截取此字符串的2个字符(0-99)并转换为数字作为secretstr的位置参数pos
+       d.每次截取此字符串的2个字符(00-99)并转换为数字作为secretstr的位置参数pos
        e.若pos超过secretstr最大长度，则求余以转换到长度范围内
        f.依据pos，取出secretstr中一个字符作为密码字符拼接到password字符串
        g.将hashstr截短2位，若不为空字符串，则回到d步，直到生成整个密码password
@@ -61,9 +61,9 @@ def hashMn(item):
     return pow(hashvalue % 127, 3) - 1
 
 def hashPassword(seed, bit=16):
-    assert len(seed) >= controlkey['minseedLen'], f'seed = {seed} must have length >= 4'
+    assert len(seed) >= controlkey['minseedLen'], f'seed = {seed} must longer than 4'
     assert isinstance(bit, int), f'bit = {bit} must be an integer'
-    assert controlkey['maxpswdLen'] >= bit >= controlkey['minpswdLen'], f'password length must in 6-20'
+    assert controlkey['maxpswdLen'] >= bit >= controlkey['minpswdLen'], f'password length must within 6-20'
 
     #获取hashvalue高次幂并转换为字符串hashstr
     hashvalue = hashMn(seed)
