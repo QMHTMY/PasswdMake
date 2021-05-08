@@ -3,7 +3,9 @@
 :author: 'Shieber'
 :date: '2020.07.31'
 
-### [link:README_CN.adoc[中文]] Make a password for any account via a seed.
+### !!! deprecated repo, please use https://github.com/QMHTMY/PasswdMakeRust[PasswdMakeRust]
+
+### [link:README_CN.adoc[中文]] Make a password for any account via a seed. 
 
 ### Usage1
 

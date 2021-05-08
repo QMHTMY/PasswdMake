@@ -3,6 +3,8 @@
 :author: 'Shieber'
 :date: '2020.07.31'
 
+### !!! 废弃仓库，请使用 https://gitee.com/QMHTMY/PasswdMakeRust[PasswdMakeRust]
+
 ### [link:README.adoc[English]] 输入各种账号的seed以生成密码，seed可以是账户种类加姓名或数字等。
 
 ### 用法1
